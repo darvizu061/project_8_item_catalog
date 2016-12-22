@@ -45,7 +45,7 @@ Add the following text to the file:
 `grader ALL=(ALL) NOPASSWD:ALL`
 
 Save file and exit nano editor.
-###### optional - Log In As Grader User  
+###### Log In As Grader User  
 Checkpoint: At this point, if you want to try to login to your server via SSH as grader you must do the following:
 
 Generate key pairs on your LOCAL machine & give passphrase. This command will generate 2 files. One of these two files will have extension .pub which will be your public key.
@@ -73,10 +73,14 @@ Get all installed packages
 Install new updates
 
 `$ sudo apt-get upgrade` note: you may be prompted to hit y for yes or n for no on some package updates.
-##### 6 - Change the SSH port from 22 to 2200
+##### 6 - Change the SSH port from 22 to 2200 and disable root login
 Edit ssh config file & change port 22 to 2200
 
 `$ sudo nano /etc/ssh/sshd_config`
+
+While editing the file also change `PermitRootLogin without-password` to `PermitRootLogin no` to disable root login with private key.
+
+Add `AllowUsers grader` in that file to allow grader to log in via SSH.
 
 Restart ssh service
 
