@@ -42,7 +42,7 @@ Edit file to give sudo permission to grader:
 
 Add the following text to the file:
 
-`grader ALL=(ALL) NOPASSWD:ALL`
+`grader ALL=(ALL) ALL`
 
 Save file and exit nano editor.
 ###### Log In As Grader User  
